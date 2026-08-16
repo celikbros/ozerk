@@ -1,0 +1,76 @@
+# SPDX-License-Identifier: Apache-2.0
+#
+# ozerk.toml — OZERK uygulama manifesti (taslak) / OZERK application manifest (draft)
+#
+# TR: Bu dosya, uygulamanın yetkilerini kurulumdan ÖNCE açıkça beyan eder.
+#     Beyan edilmeyen hiçbir yetki sessizce kullanılamaz (Manifesto §13).
+#     Şema henüz kararlaştırılmadı; alanlar taslaktır ve değişebilir.
+# EN: This file declares the application's capabilities BEFORE installation.
+#     No undeclared capability may be used silently (Manifesto §13).
+#     The schema is not final yet; fields are draft and may change.
+
+[app]
+# TR: Uygulama kimliği (ters alan adı biçimi önerilir).
+# EN: Application id (reverse-DNS form suggested).
+id = "org.example.app"
+
+# TR: Sürüm. / EN: Version.
+version = "0.1.0"
+
+# TR: Kaynak kodu adresi. / EN: Source code address.
+source = "https://example.org/source"
+
+# TR: Lisans (SPDX tanımlayıcısı). / EN: License (SPDX identifier).
+license = "GPL-3.0-or-later"
+
+[runtime]
+# TR: Çalıştırma türü. Seçenekler taslaktır.
+# EN: Runtime type. Options are draft.
+# "native" | "flatpak" | "web" | "android-compat"
+type = "flatpak"
+
+[permissions]
+# TR: İzinler; varsayılan olarak hepsi kapalıdır.
+# EN: Permissions; everything is off by default.
+files = false         # dosya erişimi / file access
+camera = false        # kamera erişimi / camera access
+microphone = false    # mikrofon erişimi / microphone access
+contacts = false      # kişi erişimi / contacts access
+calendar = false      # takvim erişimi / calendar access
+
+# TR: Konum hassasiyeti. / EN: Location precision.
+# "none" | "coarse" | "precise"
+location = "none"
+
+# TR: Arka plan çalışma koşulu. / EN: Background execution.
+background = false
+
+# TR: Bildirim yetkisi. / EN: Notification permission.
+notifications = false
+
+[network]
+# TR: Ağ erişim modeli; Manifesto §9.2'deki beş profile karşılık gelir.
+# EN: Network access model; corresponds to the five profiles in Manifesto §9.2.
+# "none"      §9.2/1 — ağ erişimi yok / no network access
+# "allowlist" §9.2/2 — yalnızca izin verilen alan adları / allowed domains only
+# "ask"       §9.2/3 — yeni alan adlarında kullanıcıya sor / ask on new domains
+# "full"      §9.2/4 — genel internet erişimi / general internet access
+# "raw"       §9.2/5 — ham ağ erişimi, yüksek riskli yetki / raw network, high-risk
+mode = "none"
+
+# TR: İzin verilen alan adları (mode = "allowlist" iken geçerlidir).
+# EN: Allowed domains (effective when mode = "allowlist").
+allowed_domains = []
+
+[declarations]
+# TR: Telemetri beyanı; "none" değilse açık bir açıklama beklenir.
+# EN: Telemetry declaration; if not "none", a clear explanation is expected.
+telemetry = "none"
+
+# TR: Reklam beyanı. / EN: Advertising declaration.
+ads = "none"
+
+# [build]
+# TR: Build doğrulama durumu; doğrulama araçları hazır olduğunda eklenecektir.
+# EN: Build verification status; will be added when verification tooling exists.
+# reproducible = false

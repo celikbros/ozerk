@@ -1,0 +1,22 @@
+# SPDX-License-Identifier: Apache-2.0
+
+[package]
+name = "ozerk"
+version = "0.1.0"
+edition = "2024"
+description = "OZERK gelistirici CLI iskeleti / OZERK developer CLI skeleton"
+license = "Apache-2.0"
+repository = "https://github.com/celikbros/ozerk"
+
+[dependencies]
+# TR: "color" özelliği bilinçli olarak kapalı: iskelet için gerekmez ve
+#     bağımlılık ağacını küçük tutar. / EN: The "color" feature is deliberately
+#     off: not needed for the skeleton and it keeps the dependency tree small.
+clap = { version = "4.6.6", default-features = false, features = [
+    "std",
+    "help",
+    "usage",
+    "error-context",
+    "suggestions",
+    "derive",
+] }
