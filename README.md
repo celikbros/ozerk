@@ -15,8 +15,17 @@ Projenin kurucu metni manifestodur ve bu depodaki her kararın ölçüsüdür:
 
 > **Aşama 0 — Kurucu standartlar.**
 > Bu proje erken aşamadadır; **henüz kullanılabilir bir ürün veya platform kodu yoktur.**
-> Şu anda kurucu belgeler ve standartlar (manifesto, yönetişim, RFC süreci, lisanslama) üzerinde çalışılmaktadır.
-> İlk görünür hedef: `ozerk` geliştirici CLI iskeletinin erken bir demosu.
+
+Bugüne kadar tamamlananlar:
+
+- Kurucu belgeler: manifesto (Sürüm 1.1), yönetişim, RFC süreci, lisanslama, katkı ve güvenlik politikası.
+- Yedi RFC: [süreç](rfc/0000-rfc-sureci.md), [karar kaydı](rfc/0001-karar-kaydi.md), [taban dağıtım](rfc/0002-taban-dagitim.md), [paket formatı](rfc/0003-paket-formati.md), [tarayıcı motoru](rfc/0004-tarayici-motoru.md), [Guard ağ modeli](rfc/0005-guard-ag-modeli.md), [finansman](rfc/0008-finansman.md).
+- [`ozerk` CLI iskeleti](sdk/cli/): komut ağacı derleniyor ve CI'da sınanıyor; `init` taslak bir uygulama manifesti üretir. Diğer komutlar henüz iş yapmaz ve bunu açıkça söyler.
+- [İlk QEMU denemesi](docs/qemu-denemeleri.md): taban dağıtım adayı emülatörde çalıştırıldı. İki sonuç doğrulandı — cihazı kullanmak için çevrim içi hesap istenmiyor, ve Guard'ın ([RFC-0005](rfc/0005-guard-ag-modeli.md)) dayandığı çekirdek yetenekleri bu tabanda mevcut.
+
+Sıradaki hedef, yol haritasındaki **D2 kapısı**: bir uygulamanın bir alan adına erişiminin Guard tarafından canlı olarak engellendiğini göstermek. Ayrıntılar: [docs/yol-haritasi.md](docs/yol-haritasi.md).
+
+> **Geliştirme temposu.** Proje kurucusunun gönüllü zamanıyla yürütülmektedir; ilerleme aralıklıdır ve zaman zaman duraklayabilir. Sessiz geçen dönemler projenin bırakıldığı anlamına gelmez. Finansman durumu ve bunun tempoya etkisi [RFC-0008](rfc/0008-finansman.md)'de açıkça yazılıdır.
 
 ## Bileşenler
 
@@ -42,7 +51,8 @@ Bu bileşenlerin hiçbiri henüz kodlanmamıştır; bu liste hedef mimariyi tan�
 ```
 docs/       Kurucu belgeler (manifesto, yol haritası, standartlar)
 rfc/        Açık karar süreci: RFC taslakları ve kabul edilen RFC'ler
-sdk/cli/    ozerk geliştirici CLI iskeleti (ilk demo hedefi)
+sdk/cli/    ozerk geliştirici CLI iskeleti
+tools/qemu/ Emülatör açılış ve yetenek sınama betikleri
 LICENSES/   Kullanılan lisansların tam metinleri
 ```
 
@@ -98,8 +108,17 @@ The founding document of the project is the manifesto, and it is the measure of 
 
 > **Phase 0 — Founding standards.**
 > This project is at an early stage; **there is no usable product or platform code yet.**
-> Current work is on founding documents and standards (manifesto, governance, RFC process, licensing).
-> First visible goal: an early demo of the `ozerk` developer CLI skeleton.
+
+Completed so far:
+
+- Founding documents: the manifesto (Version 1.1), governance, the RFC process, licensing, contribution and security policy.
+- Seven RFCs: [process](rfc/0000-rfc-sureci.md), [decision record](rfc/0001-karar-kaydi.md), [base distribution](rfc/0002-taban-dagitim.md), [package format](rfc/0003-paket-formati.md), [browser engine](rfc/0004-tarayici-motoru.md), [Guard network model](rfc/0005-guard-ag-modeli.md), [funding](rfc/0008-finansman.md).
+- The [`ozerk` CLI skeleton](sdk/cli/): the command tree builds and is checked in CI; `init` generates a draft application manifest. The other commands do no work yet and say so plainly.
+- The [first QEMU trial](docs/qemu-denemeleri.md): a base-distribution candidate was run in the emulator. Two results were verified — no online account is required to use the device, and the kernel capabilities Guard ([RFC-0005](rfc/0005-guard-ag-modeli.md)) rests on are present on that base.
+
+The next goal is gate **D2** on the roadmap: demonstrating that Guard blocks an application's access to a domain, live. Details: [docs/yol-haritasi.md](docs/yol-haritasi.md).
+
+> **Development cadence.** The project runs on the founder's volunteer time; progress is intermittent and may pause for periods. Quiet stretches do not mean the project has been abandoned. The funding situation and its effect on cadence are stated plainly in [RFC-0008](rfc/0008-finansman.md).
 
 ### Components
 
@@ -125,7 +144,8 @@ None of these components have been implemented yet; this list defines the target
 ```
 docs/       Founding documents (manifesto, roadmap, standards)
 rfc/        Open decision process: RFC drafts and accepted RFCs
-sdk/cli/    ozerk developer CLI skeleton (first demo goal)
+sdk/cli/    ozerk developer CLI skeleton
+tools/qemu/ Emulator boot and capability-probe scripts
 LICENSES/   Full texts of the licenses in use
 ```
 
