@@ -83,7 +83,7 @@ Aşağıdaki kararlar alınmamıştır. Her biri kendi RFC'sinde tartışılıp 
   - postmarketOS: en geniş cihaz portu topluluğu, küçük taban sistem, mobil odaklı araçlar; musl kaynaklı uyumluluk sınırları.
   - Mobian: Debian'ın paket zenginliği ve glibc uyumluluğu; desteklenen cihaz sayısı daha dar.
   - İkisiyle birden başlayıp ölçüm sonrası daraltma: öğrenme değeri yüksek, ancak süreklilik maliyeti iki katına çıkar.
-- **Ertelendiği RFC:** RFC-0002 — Taban Dağıtım Seçimi (taslak numara)
+- **Ertelendiği RFC:** [RFC-0002 — Taban Dağıtım Seçimi](0002-taban-dagitim.md) (taslak yazıldı)
 
 ### A3 — Uygulama paket formatı
 
@@ -93,7 +93,7 @@ Aşağıdaki kararlar alınmamıştır. Her biri kendi RFC'sinde tartışılıp 
   - Flatpak üst kümesi (**öne çıkan öneri**): Flatpak paketleri ve portalları aynen kullanılır; manifeste OZERK eklentileri (ağ profili, telemetri beyanı, build doğrulama alanları) eklenir. OZERK eklentilerini tanımayan sistemlerde paket sıradan Flatpak olarak çalışır.
   - Saf Flatpak + ayrı politika dosyası: standarda dokunmaz, ancak beyan ile paket birbirinden kopar.
   - Özgün format: manifesto ihtiyaçlarını en doğrudan karşılar; upstream-öncelikli stratejiyle (D3) çelişir ve ekosistem sıfırdan başlar.
-- **Ertelendiği RFC:** RFC-0003 — Uygulama Paket Formatı ve Manifest Standardı (taslak numara)
+- **Ertelendiği RFC:** [RFC-0003 — Uygulama Paket Formatı ve Manifest Standardı](0003-paket-formati.md) (taslak yazıldı)
 
 ### A4 — Referans donanım yolu
 
@@ -230,7 +230,7 @@ The following decisions have not been taken. Each will be discussed and decided 
   - postmarketOS: the largest device-port community, a small base system, mobile-focused tooling; compatibility limits stemming from musl.
   - Mobian: Debian's package richness and glibc compatibility; a narrower set of supported devices.
   - Starting with both and narrowing down after measurement: high learning value, but the maintenance cost doubles.
-- **Deferred to:** RFC-0002 — Base Distribution Choice (tentative number)
+- **Deferred to:** [RFC-0002 — Base Distribution Choice](0002-taban-dagitim.md) (draft written)
 
 #### A3 — Application package format
 
@@ -240,7 +240,7 @@ The following decisions have not been taken. Each will be discussed and decided 
   - A Flatpak superset (**the leading proposal**): Flatpak packages and portals are used as-is; OZERK extensions (network profile, telemetry declaration, build verification fields) are added to the manifest. On systems that do not recognize the OZERK extensions, the package works as an ordinary Flatpak.
   - Pure Flatpak + a separate policy file: leaves the standard untouched, but decouples the declaration from the package.
   - An original format: meets the manifesto's needs most directly; contradicts the upstream-first strategy (D3) and starts the ecosystem from zero.
-- **Deferred to:** RFC-0003 — Application Package Format and Manifest Standard (tentative number)
+- **Deferred to:** [RFC-0003 — Application Package Format and Manifest Standard](0003-paket-formati.md) (draft written)
 
 #### A4 — Reference hardware path
 
