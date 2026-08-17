@@ -1,0 +1,7 @@
+# TR: Kabuk betikleri ve YAML her zaman LF ile saklanır ve teslim edilir;
+#     Windows'ta CRLF'e dönüşürlerse Linux CI'da çalışmazlar.
+# EN: Shell scripts and YAML are always stored and checked out with LF;
+#     if they turn into CRLF on Windows they break on Linux CI.
+*.sh text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
