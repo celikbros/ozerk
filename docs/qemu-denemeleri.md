@@ -77,13 +77,54 @@ Bölüm tablosu ve etiketler doğru olduğuna göre sorun kök bölümün *bulun
 
 **Guard (Bölüm 9, [RFC-0005](../rfc/0005-guard-ag-modeli.md)) için henüz veri toplanmadı.** Önerilen mimarinin dayandığı taban yetenekler — cgroup v2, nftables `socket cgroupv2` eşleşmesi, ağ namespace'leri, `pasta`/`passt` varlığı, Landlock ABI sürümü — bu denemede sınanmadı. Bunun için misafir sistemde kabuk erişimi gerekir; sshd kapalı olduğundan ilk adım SSH'ı etkinleştirmektir.
 
-### 1.6. Açık işler
+### 1.6. Yetenek sınaması — Guard ve paketleme
 
-1. Misafir sistemde sshd etkinleştirilip Guard'ın taban yetenekleri sınanmalı (cgroup v2, nftables, netns, Landlock ABI, `pasta`).
-2. Flatpak ve xdg-desktop-portal'ın imajda bulunup bulunmadığı, hangi sürümlerde olduğu kaydedilmeli ([RFC-0003](../rfc/0003-paket-formati.md) için).
-3. Aynı deneme **Mobian** için yapılmalı; [RFC-0002](../rfc/0002-taban-dagitim.md)'nin karşılaştırması ancak iki taban da aynı koşullarda çalıştırıldıktan sonra veriye dayanır.
-4. Açılış süresi ve boştaki bellek kullanımı ölçülmeli. Bu denemede **ölçülmedi**; tahmin yazılmamıştır.
-5. postmarketOS'un immutable varyantı **Duranium** ayrıca denenmeli ([RFC-0002](../rfc/0002-taban-dagitim.md) Bölüm 3).
+sshd etkinleştirildikten sonra misafir sistemde iki sınama betiği çalıştırıldı: [tools/qemu/probe.sh](../tools/qemu/probe.sh) ve [tools/qemu/probe2.sh](../tools/qemu/probe2.sh). Amaç, [RFC-0005](../rfc/0005-guard-ag-modeli.md)'in önerdiği mimarinin dayandığı yeteneklerin bu tabanda gerçekten bulunup bulunmadığını görmekti.
+
+**Guard'ın dayandığı yetenekler ([RFC-0005](../rfc/0005-guard-ag-modeli.md)):**
+
+| Yetenek | Durum | Kanıt |
+|---|---|---|
+| cgroup v2 (birleşik) | **Var** | `cgroup.controllers`: `cpuset cpu io memory hugetlb pids dmem` |
+| nftables | **Var** — v1.1.6 | `nft --version` |
+| nftables `socket cgroupv2` eşleşmesi | **Var** | Root ile `nft --check` kuralı **kabul etti** |
+| Ayrıcalıksız kullanıcı namespace'i | **Var** | `user.max_user_namespaces` = 15323; `unshare -U -n` çalışıyor |
+| Ağ namespace'i ile izolasyon | **Çalışıyor** | `bwrap --unshare-net` başarılı |
+| Landlock | **Etkin** | Çekirdek günlüğü: `landlock: Up and running`; `lsm` listesi: `lockdown,capability,landlock,yama` |
+| systemd `IPAddressAllow=` / `IPAddressDeny=` | **Tanınıyor** | systemd 261; `systemctl show -p IPAddressAllow` özelliği döndürüyor |
+| `pasta` / `passt` | Kurulu **değil**, depoda **var** | `passt-2026.05.26-r0` |
+| `slirp4netns` | Kurulu **değil**, depoda **var** | `slirp4netns-1.3.3-r0` |
+| `unbound` (istemci başına görünüm) | Kurulu **değil**, depoda **var** | `unbound-1.25.2-r0` |
+| Yerel çözümleyici (mevcut durum) | **dnsmasq** | `127.0.0.1:53` üzerinde dinliyor (NetworkManager tarafından yönetilen) |
+
+**Paketleme katmanı ([RFC-0003](../rfc/0003-paket-formati.md)):**
+
+| Bileşen | Sürüm |
+|---|---|
+| Flatpak | 1.16.6 |
+| xdg-desktop-portal | 1.21.2 |
+| xdg-desktop-portal-gtk | 1.15.3 |
+| Portal arka uçları | `xdg-desktop-portal-phosh`, `-wlr`, `-gtk` |
+| bubblewrap | 0.11.2 |
+
+**Sistem:** postmarketOS v26.06, çekirdek 6.18.44-0-lts, **systemd 261**, **musl libc**, 1280 kurulu paket.
+
+**Sonuç: RFC-0005'in önerdiği mimari bu taban üzerinde kurulabilir.** Zorlamanın dayandığı çekirdek yetenekleri (cgroup v2, nftables `socket cgroupv2`, ayrıcalıksız ağ namespace'i, Landlock) mevcut ve çalışıyor. Kullanıcı alanı bileşenleri (`pasta`, `unbound`) imajda kurulu değil ama Alpine deposunda paketli — yani sıfırdan yazılacak bir şey yok, paketlenip yapılandırılacak bileşenler var.
+
+**Manifesto 9.2'nin 1. profili (ağ erişimi yok) bugün zorlanabilir durumda.** `bwrap --unshare-net` çalışıyor ve Flatpak'a `--share=network` verilmemesi yeterli. Bu, [RFC-0005](../rfc/0005-guard-ag-modeli.md)'in "sert sınır" dediği katmanın taban tarafından karşılandığını gösterir. Profil 2 ve 3 için gereken çözümleyici-çapalı mimari ise henüz kurulmamıştır; yalnızca kurulabilir olduğu doğrulanmıştır.
+
+**Boştaki bellek:** 4 GB atanmış sistemde açılıştan hemen sonra `MemAvailable` 2,87 GB idi (yaklaşık 1 GB kullanımda). Bu tek bir gözlemdir, karşılaştırma için Mobian'da aynı koşulda tekrarlanmalıdır.
+
+**Yöntem notu — kaydedilmesi gereken bir hata.** İlk denemede `apk search` tüm paketler için "bulunamadı" döndürdü ve `passt`, `unbound`, `slirp4netns`'in depoda olmadığı sonucu çıkarılacaktı. Bu **yanlış** olurdu: kurulu olduğu bilinen `bubblewrap` da "bulunamadı" çıkınca yöntemin kendisinin bozuk olduğu anlaşıldı — depo dizini güncel değildi. `apk update` sonrası 29.236 paketlik dizinle arama doğru sonucu verdi. Bilinen-doğru bir kontrol vakası olmasaydı bu belgeye yanlış bir bulgu girecekti.
+
+### 1.7. Açık işler
+
+1. Aynı deneme **Mobian** için yapılmalı; [RFC-0002](../rfc/0002-taban-dagitim.md)'nin karşılaştırması ancak iki taban da aynı koşullarda çalıştırıldıktan sonra veriye dayanır. Özellikle glibc/musl farkının Guard yeteneklerine etkisi ölçülmeli.
+2. `pasta` + `unbound` kurulup [RFC-0005](../rfc/0005-guard-ag-modeli.md)'in E1/E2 deneyleri fiilen çalıştırılmalı: uygulama başına ağ namespace'i, çözümleyici-çapalı nftables kümesi ve bir alan adının canlı engellenmesi (yol haritasındaki **D2** kapısı).
+3. Landlock ABI sürümü bir sistem çağrısı sondasıyla belirlenmeli; bu denemede yalnızca Landlock'un **etkin** olduğu doğrulandı, ABI seviyesi ölçülmedi.
+4. Açılış süresi ölçülmeli. Bu denemede **ölçülmedi**; tahmin yazılmamıştır.
+5. postmarketOS'un immutable varyantı **Duranium** ayrıca denenmeli ([RFC-0002](../rfc/0002-taban-dagitim.md) Bölüm 3); güncelleme mimarisi açısından asıl aday odur.
+6. Kurulu imajda sshd varsayılan kapalıdır ve bu denemede elle açılmıştır. OZERK'in kendi imajında uzaktan erişimin varsayılan durumu ayrıca kararlaştırılmalıdır.
 
 ---
 
