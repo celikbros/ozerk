@@ -73,7 +73,7 @@ Aşağıdaki kararlar alınmamıştır. Her biri kendi RFC'sinde tartışılıp 
   - Chromium tabanı (örn. ungoogled varyant): en geniş web uyumluluğu; ancak build maliyeti ve Google bağımlılığını ayıklama yükü ağırdır.
   - Gecko tabanı: bağımsızlık açısından değerli; ancak mobil Linux'ta gömme (embedding) desteği zayıftır.
   - Motor fork'u: **reddedilmiştir.** Bir tarayıcı motorunu sürdürme maliyeti bu projenin ölçeğinin tamamen dışındadır; bu seçenek RFC'de yeniden açılmayacaktır.
-- **Ertelendiği RFC:** RFC-0004 — Web Uygulama Profili ve Tarayıcı Motoru (taslak numara)
+- **Ertelendiği RFC:** [RFC-0004 — Web Uygulama Profili ve Tarayıcı Motoru](0004-tarayici-motoru.md) (taslak yazıldı)
 
 ### A2 — Taban dağıtım seçimi
 
@@ -220,7 +220,7 @@ The following decisions have not been taken. Each will be discussed and decided 
   - A Chromium base (e.g. an ungoogled variant): the widest web compatibility; but the build cost and the burden of stripping Google dependencies are heavy.
   - A Gecko base: valuable for independence; but embedding support on mobile Linux is weak.
   - Forking an engine: **rejected.** The cost of maintaining a browser engine is entirely outside this project's scale; this option will not be reopened in the RFC.
-- **Deferred to:** RFC-0004 — Web Application Profile and Browser Engine (tentative number)
+- **Deferred to:** [RFC-0004 — Web Application Profile and Browser Engine](0004-tarayici-motoru.md) (draft written)
 
 #### A2 — Base distribution choice
 
