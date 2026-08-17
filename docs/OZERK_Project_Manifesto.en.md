@@ -2,8 +2,10 @@
 
 > This is the English translation of the founding document. The Turkish original (OZERK_Proje_Manifestosu.md) is normative in case of discrepancy.
 
-**Founding Document — Version 1.0**  
-**16 August 2026**
+**Founding Document — Version 1.1**  
+**17 August 2026** (first published: 16 August 2026)
+
+> **Change log.** Version 1.1: two items on browser-engine dependency were added to Chapter 24. The amendment was proposed in [RFC-0004](../rfc/0004-tarayici-motoru.md) and accepted with the founder's approval under the procedure in [GOVERNANCE.md](../GOVERNANCE.md).
 
 > **Your phone. Your data. Your decision.**
 
@@ -1178,6 +1180,8 @@ OZERK accepts the following facts from the outset:
 - An open source community alone is not a guarantee of consumer-grade product quality.
 - Security requires continuous updates and professional process.
 - A good idea alone does not create an ecosystem.
+- The promise that the web is a first-class application platform depends permanently on a browser engine that OZERK does not write and could not write; there are three engines under active maintenance in the world, and all three are funded by organisations vastly larger than OZERK. OZERK does not set the technical direction of the web platform.
+- In a web-first system the browser engine is the largest attack surface, and every web application shares it; OZERK depends on upstream's cadence for patching that surface, and shall publish the measured patch delay.
 
 OZERK shall not hide these difficulties, shall not downplay them, and shall not market unrealized features as if they existed.
 

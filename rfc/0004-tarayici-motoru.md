@@ -481,6 +481,8 @@ Bu RFC, manifesto 24'ün (Dürüstlük Taahhüdü) listesine aşağıdaki iki ma
 
 Manifesto tadilleri [RFC-0000](0000-rfc-sureci.md) gereği RFC ister. Bu RFC'nin kabulü, yukarıdaki iki maddenin manifesto 24'e eklenmesini de kapsar. Tadil metni ayrıca tartışılmak istenirse ayrı bir RFC'ye bölünebilir; bu durumda bu RFC'nin kabulü söz konusu tadili engellemez.
 
+> **Durum: uygulandı (17 Ağustos 2026).** Yukarıdaki iki madde, [GOVERNANCE.md](../GOVERNANCE.md)'deki usule göre kurucu onayıyla kabul edildi ve manifestoya işlendi; kurucu metin **Sürüm 1.1** olarak güncellendi. Bu RFC'nin geri kalanı (motor seçimi, K1–K7 kararları) hâlâ **Taslak** durumundadır — yalnızca 24. bölüm tadili karara bağlanmıştır.
+
 ---
 
 ### 9. Karar ölçütleri ve sonraki adımlar
@@ -1085,6 +1087,8 @@ This RFC proposes adding the following two items to the list in manifesto 24 (Ho
 > - The browser engine is the largest attack surface in a web-first system, and all web applications share it; OZERK depends on upstream's cadence for patching that surface, and publishes the patch delay it measures.
 
 Amendments to the manifesto require an RFC under [RFC-0000](0000-rfc-sureci.md). Acceptance of this RFC includes the addition of the two items above to manifesto 24. If the amendment text is to be discussed separately, it may be split into its own RFC; in that case acceptance of this RFC does not block that amendment.
+
+> **Status: applied (17 August 2026).** The two items above were accepted with the founder's approval under the procedure in [GOVERNANCE.md](../GOVERNANCE.md) and written into the manifesto; the founding document was updated to **Version 1.1**. The rest of this RFC (the engine choice, decisions K1–K7) remains a **Draft** — only the Chapter 24 amendment has been decided.
 
 ---
 

@@ -1,7 +1,9 @@
 # OZERK Proje Manifestosu
 
-**Kurucu Metin — Sürüm 1.0**  
-**16 Ağustos 2026**
+**Kurucu Metin — Sürüm 1.1**  
+**17 Ağustos 2026** (ilk yayım: 16 Ağustos 2026)
+
+> **Değişiklik kaydı.** Sürüm 1.1: Bölüm 24'e tarayıcı motoru bağımlılığına ilişkin iki madde eklendi. Tadil [RFC-0004](../rfc/0004-tarayici-motoru.md) ile önerildi ve [GOVERNANCE.md](../GOVERNANCE.md)'deki usule göre kurucu onayıyla kabul edildi.
 
 > **Telefon senin. Veri senin. Karar senin.**
 
@@ -1214,6 +1216,8 @@ OZERK aşağıdaki gerçekleri baştan kabul eder:
 - Açık kaynak topluluğu tek başına tüketici kalitesinde ürün garantisi değildir.
 - Güvenlik, sürekli güncelleme ve profesyonel süreç gerektirir.
 - İyi fikir tek başına ekosistem oluşturmaz.
+- Web’in birinci sınıf uygulama platformu olması vaadi, OZERK’in yazmadığı ve yazamayacağı bir tarayıcı motoruna kalıcı olarak bağımlıdır; dünyada bakımı sürdürülen motor sayısı üçtür ve üçü de OZERK’ten kat kat büyük kuruluşlarca finanse edilir. Web platformunun teknik yönünü OZERK belirlemez.
+- Tarayıcı motoru, web-birinci bir sistemde en büyük saldırı yüzeyidir ve bütün web uygulamaları onu paylaşır; OZERK bu yüzeyin yamalanmasında upstream’in temposuna bağımlıdır ve ölçülen yama gecikmesini kamuya açıklar.
 
 OZERK bu zorlukları gizlemeyecek, küçük göstermeyecek ve gerçekleşmemiş özellikleri varmış gibi pazarlamayacaktır.
 
