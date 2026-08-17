@@ -113,7 +113,7 @@ Aşağıdaki kararlar alınmamıştır. Her biri kendi RFC'sinde tartışılıp 
   - Uygulama-başı ağ namespace + sistem denetimindeki DNS/proxy katmanı: en güçlü zorlama; suspend, performans ve karmaşıklık maliyeti ölçülmelidir.
   - nftables tabanlı uygulama-başı filtreleme (cgroup/uid eşlemesiyle): daha hafif; alan adı düzeyinde kesinliği daha düşük.
   - Karma model: profil 1–2 (ağ yok / yalnızca izinli alan adları) sıkı zorlanır; profil 3–4'te gözlemlenen davranış raporlanır ve garanti iddia edilmez.
-- **Ertelendiği RFC:** RFC-0005 — OZERK Guard Ağ Modeli (taslak numara)
+- **Ertelendiği RFC:** [RFC-0005 — OZERK Guard Ağ Modeli](0005-guard-ag-modeli.md) (taslak yazıldı)
 
 ### A6 — Finansman yolu
 
@@ -260,7 +260,7 @@ The following decisions have not been taken. Each will be discussed and decided 
   - Per-application network namespaces + a system-controlled DNS/proxy layer: the strongest enforcement; its cost in suspend behavior, performance, and complexity must be measured.
   - nftables-based per-application filtering (via cgroup/uid mapping): lighter; lower certainty at the domain level.
   - A hybrid model: profiles 1–2 (no network / allowed domains only) are strictly enforced; in profiles 3–4 observed behavior is reported and no guarantee is claimed.
-- **Deferred to:** RFC-0005 — OZERK Guard Network Model (tentative number)
+- **Deferred to:** [RFC-0005 — OZERK Guard Network Model](0005-guard-ag-modeli.md) (draft written)
 
 #### A6 — Funding path
 
