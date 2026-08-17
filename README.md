@@ -58,6 +58,7 @@ Geliştirme açık yürütülür. Başlamak için:
 
 - [CONTRIBUTING.md](CONTRIBUTING.md) — katkı süreci ve kurallar
 - [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) — davranış kuralları
+- [SECURITY.md](SECURITY.md) — güvenlik açığı bildirimi (herkese açık issue açmayın)
 - [rfc/](rfc/) — önemli teknik kararların alındığı açık RFC süreci; yeni öneriler burada taslak olarak açılır
 
 Aşama 0'da en değerli katkılar kod değil, kurucu belgelerin gözden geçirilmesi, RFC tartışmaları ve çevirilerdir.
@@ -140,6 +141,7 @@ Development happens in the open. To get started:
 
 - [CONTRIBUTING.md](CONTRIBUTING.md) — contribution process and rules
 - [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) — code of conduct
+- [SECURITY.md](SECURITY.md) — reporting vulnerabilities (do not open a public issue)
 - [rfc/](rfc/) — the open RFC process where significant technical decisions are made; new proposals start as drafts here
 
 In Phase 0 the most valuable contributions are not code, but reviews of the founding documents, RFC discussions and translations.
