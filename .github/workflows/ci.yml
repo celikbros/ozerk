@@ -1,0 +1,66 @@
+# SPDX-License-Identifier: Apache-2.0
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  cli:
+    name: ozerk CLI (fmt, clippy, build)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Rust bileşenleri / Rust components
+        run: rustup component add rustfmt clippy
+
+      - name: Bağımlılık önbelleği / Dependency cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            sdk/cli/target
+          key: ${{ runner.os }}-cargo-${{ hashFiles('sdk/cli/Cargo.lock') }}
+
+      - name: Biçim denetimi / Format check
+        working-directory: sdk/cli
+        run: cargo fmt --check
+
+      - name: Clippy
+        working-directory: sdk/cli
+        run: cargo clippy --all-targets -- -D warnings
+
+      - name: Derleme / Build
+        working-directory: sdk/cli
+        run: cargo build --verbose
+
+      - name: Duman testi / Smoke test
+        working-directory: sdk/cli
+        run: |
+          cargo run --quiet -- --version
+          cargo run --quiet -- --help
+          bin="$PWD/target/debug/ozerk"
+          cd "$(mktemp -d)"
+          "$bin" init
+          test -f ozerk.toml
+          # TR: İkinci çağrı var olan dosyanın üzerine yazmamalıdır.
+          # EN: The second call must not overwrite the existing file.
+          before=$(sha256sum ozerk.toml)
+          "$bin" init
+          after=$(sha256sum ozerk.toml)
+          test "$before" = "$after"
+
+  links:
+    name: Belge bağlantıları / Document links
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Depo içi Markdown bağlantıları / In-repo Markdown links
+        run: bash .github/scripts/check-links.sh
