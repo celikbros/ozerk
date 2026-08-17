@@ -1,0 +1,54 @@
+# SPDX-License-Identifier: CC-BY-SA-4.0
+name: RFC önerisi / RFC proposal
+description: Bir mimari karar, standart veya ilke değişikliği öner. / Propose an architectural decision, standard or principle change.
+title: "RFC: "
+labels: ["rfc"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Bu şablon, bir RFC taslağı yazılmadan **önce** fikri tartışmaya açmak içindir.
+        Süreç: [rfc/0000-rfc-sureci.md](https://github.com/celikbros/ozerk/blob/main/rfc/0000-rfc-sureci.md).
+        Henüz kararlaştırılmamış konular [RFC-0001 karar kaydında](https://github.com/celikbros/ozerk/blob/main/rfc/0001-karar-kaydi.md) A1–A8 olarak listelidir.
+
+        This template is for opening an idea to discussion **before** an RFC draft is written.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Çözülen sorun / The problem being solved
+      description: Bugün ne eksik veya yanlış? / What is missing or wrong today?
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Öneri / Proposal
+      description: Ne yapılmasını öneriyorsun? / What do you propose be done?
+    validations:
+      required: true
+
+  - type: textarea
+    id: manifesto
+    attributes:
+      label: Manifesto ile ilişkisi / Relation to the manifesto
+      description: |
+        Hangi bölümleri ilgilendiriyor (ör. §6.6, §9.2)? Bir kırmızı çizgiyle (§23) çelişiyor mu?
+        Which sections does it touch (e.g. §6.6, §9.2)? Does it conflict with a red line (§23)?
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatifler / Alternatives
+      description: Hangi başka yollar düşünüldü ve neden elendi? / What other paths were considered, and why were they set aside?
+
+  - type: textarea
+    id: unknowns
+    attributes:
+      label: Bilinmeyenler / Unknowns
+      description: |
+        Emin olmadığın şeyleri açıkça yaz. Doğrulanmamış iddia, doğrulanmış iddia gibi sunulmamalıdır (Manifesto §24).
+        State plainly what you are unsure about. An unverified claim must not be presented as a verified one (Manifesto §24).

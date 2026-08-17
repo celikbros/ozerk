@@ -1,0 +1,53 @@
+# SPDX-License-Identifier: CC-BY-SA-4.0
+name: Hata bildirimi / Bug report
+description: Depodaki kod veya belgelerde bir hata bildir. / Report a defect in the code or documents in this repository.
+labels: ["hata"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Güvenlik açıkları için bu şablonu kullanmayın** — [SECURITY.md](https://github.com/celikbros/ozerk/blob/main/SECURITY.md).
+
+        OZERK Aşama 0'dadır: bu depoda `ozerk` CLI iskeleti, kurucu belgeler ve RFC taslakları vardır.
+        Henüz çalışan bir işletim sistemi yoktur; cihaz üzerindeki davranışlarla ilgili hata bildirilemez.
+
+        **Do not use this template for security vulnerabilities.** OZERK is at Phase 0: there is no
+        running operating system yet, so on-device behaviour cannot be reported as a bug.
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Alan / Area
+      options:
+        - "ozerk CLI (sdk/cli)"
+        - "Belge / Document (docs, rfc, README...)"
+        - "Depo altyapısı / Repository infrastructure (CI, betikler)"
+        - "Diğer / Other"
+    validations:
+      required: true
+
+  - type: textarea
+    id: what
+    attributes:
+      label: Ne oldu? / What happened?
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Ne beklenirdi? / What was expected?
+    validations:
+      required: true
+
+  - type: textarea
+    id: repro
+    attributes:
+      label: Yeniden üretme adımları / Steps to reproduce
+      description: Kodla ilgiliyse komutları ve çıktıyı ekle. / If it concerns code, include the commands and the output.
+
+  - type: input
+    id: env
+    attributes:
+      label: Ortam / Environment
+      description: İşletim sistemi, `ozerk --version`, Rust sürümü. / Operating system, `ozerk --version`, Rust version.

@@ -1,0 +1,12 @@
+# SPDX-License-Identifier: CC-BY-SA-4.0
+blank_issues_enabled: true
+contact_links:
+  - name: Güvenlik açığı bildirimi / Report a vulnerability
+    url: https://github.com/celikbros/ozerk/security/advisories/new
+    about: Güvenlik açıklarını herkese açık issue olarak açmayın. / Do not report vulnerabilities in a public issue.
+  - name: RFC süreci / The RFC process
+    url: https://github.com/celikbros/ozerk/blob/main/rfc/0000-rfc-sureci.md
+    about: Mimari ve standart kararları RFC ile alınır. / Architectural and standards decisions are made through RFCs.
+  - name: Manifesto — projenin ölçüsü / The measure of the project
+    url: https://github.com/celikbros/ozerk/blob/main/docs/OZERK_Proje_Manifestosu.md
+    about: Her öneri manifestodaki ilkelerle değerlendirilir. / Every proposal is weighed against the principles in the manifesto.
