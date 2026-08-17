@@ -122,7 +122,7 @@ Aşağıdaki kararlar alınmamıştır. Her biri kendi RFC'sinde tartışılıp 
   - Sovereign Tech Fund: kritik açık kaynak altyapının bakımı; upstream katkı stratejisiyle (D3) örtüşür.
   - Horizon Europe: büyük ölçek, konsorsiyum gerektirir; erken aşama için ağırdır.
   - TÜBİTAK 1507 / 1512: Türkiye'de KOBİ ve girişim destekleri; ticari cihaz ve yerelleştirme ayaklarına uygundur.
-- **Ertelendiği RFC:** RFC-0008 — Finansman ve Sürdürülebilirlik Planı (taslak numara)
+- **Ertelendiği RFC:** [RFC-0008 — Finansman ve Sürdürülebilirlik Planı](0008-finansman.md) (taslak yazıldı)
 
 ### A7 — Marka ve isim stratejisi
 
@@ -267,7 +267,7 @@ The following decisions have not been taken. Each will be discussed and decided 
   - Sovereign Tech Fund: maintenance of critical open source infrastructure; overlaps with the upstream contribution strategy (D3).
   - Horizon Europe: large scale, requires a consortium; heavy for the early stage.
   - TÜBİTAK 1507 / 1512: SME and startup grants in Türkiye; suitable for the commercial device and localization tracks.
-- **Deferred to:** RFC-0008 — Funding and Sustainability Plan (tentative number)
+- **Deferred to:** [RFC-0008 — Funding and Sustainability Plan](0008-finansman.md) (draft written)
 
 #### A7 — Brand and name strategy
 
