@@ -70,6 +70,10 @@ Yeni bir RFC başlatmak için aşağıdaki şablonu kopyalayın:
 - **Durum:** Taslak
 - **Tarih:** YYYY-AA-GG
 - **Yazar(lar):**
+- **Lisans:** CC BY-SA 4.0
+- **Karşıladığı açık karar:** (varsa) [RFC-0001](0001-karar-kaydi.md) — AN
+- **İlgili manifesto bölümleri:** (varsa)
+- **Bağlantılı RFC'ler:** (varsa)
 
 ## Özet
 
@@ -169,6 +173,10 @@ To start a new RFC, copy the template below:
 - **Status:** Draft
 - **Date:** YYYY-MM-DD
 - **Author(s):**
+- **License:** CC BY-SA 4.0
+- **Open decision addressed:** (if any) [RFC-0001](0001-karar-kaydi.md) — AN
+- **Related manifesto sections:** (if any)
+- **Related RFCs:** (if any)
 
 ## Summary
 

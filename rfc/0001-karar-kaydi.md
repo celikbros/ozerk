@@ -2,13 +2,11 @@
 
 **Türkçe** | [English](#english)
 
-| Alan | Değer |
-|---|---|
-| **RFC** | 0001 |
-| **Başlık** | Karar Kaydı ve Açık Kararlar |
-| **Durum** | Kabul (yaşayan belge) |
-| **Tarih** | 2026-08-17 |
-| **Lisans** | CC BY-SA 4.0 |
+- **RFC:** 0001
+- **Başlık:** Karar Kaydı ve Açık Kararlar
+- **Durum:** Kabul (yaşayan belge)
+- **Tarih:** 2026-08-17
+- **Lisans:** CC BY-SA 4.0
 
 ---
 
@@ -155,13 +153,11 @@ Aşağıdaki kararlar alınmamıştır. Her biri kendi RFC'sinde tartışılıp 
 
 **OZERK RFC-0001: Decision Record and Open Decisions**
 
-| Field | Value |
-|---|---|
-| **RFC** | 0001 |
-| **Title** | Decision Record and Open Decisions |
-| **Status** | Accepted (living document) |
-| **Date** | 2026-08-17 |
-| **License** | CC BY-SA 4.0 |
+- **RFC:** 0001
+- **Title:** Decision Record and Open Decisions
+- **Status:** Accepted (living document)
+- **Date:** 2026-08-17
+- **License:** CC BY-SA 4.0
 
 ### 1. About this document
 

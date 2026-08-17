@@ -2,17 +2,15 @@
 
 **Türkçe** | [English](#english)
 
-| Alan | Değer |
-|---|---|
-| **RFC** | 0005 |
-| **Başlık** | OZERK Guard Ağ Modeli |
-| **Durum** | Taslak |
-| **Tarih** | 2026-08-17 |
-| **Yazar(lar)** | OZERK kurucusu |
-| **Lisans** | CC BY-SA 4.0 |
-| **Karşıladığı açık karar** | [RFC-0001](0001-karar-kaydi.md) — A5 |
-| **İlgili manifesto bölümleri** | 5, 6.3, 6.9, 7, 9 (tamamı), 10, 13, 23, 24 |
-| **Bağlantılı RFC'ler** | [RFC-0002](0002-taban-dagitim.md) (taban dağıtım), [RFC-0003](0003-paket-formati.md) (paket formatı ve E/V/B sınıflandırması), [RFC-0004](0004-tarayici-motoru.md) (web runtime) |
+- **RFC:** 0005
+- **Başlık:** OZERK Guard Ağ Modeli
+- **Durum:** Taslak
+- **Tarih:** 2026-08-17
+- **Yazar(lar):** OZERK kurucusu
+- **Lisans:** CC BY-SA 4.0
+- **Karşıladığı açık karar:** [RFC-0001](0001-karar-kaydi.md) — A5
+- **İlgili manifesto bölümleri:** 5, 6.3, 6.9, 7, 9 (tamamı), 10, 13, 23, 24
+- **Bağlantılı RFC'ler:** [RFC-0002](0002-taban-dagitim.md) (taban dağıtım), [RFC-0003](0003-paket-formati.md) (paket formatı ve E/V/B sınıflandırması), [RFC-0004](0004-tarayici-motoru.md) (web runtime)
 
 > **Doğrulama notu.** Bu belgedeki teknik iddialar 17 Ağustos 2026 tarihinde, mümkün olan her yerde **birincil kaynaklardan** doğrulanmıştır: çekirdek belgeleri (`docs.kernel.org`), man sayfaları, çekirdek ve nftables kaynak ağacı, IETF RFC metinleri, proje depoları ve proje SSS'leri. Blog yazıları yalnızca birincil kaynağın olmadığı yerde ve **açıkça ikincil** olarak anılmıştır. Doğrulanamayan her satır **"doğrulanmalı"** işaretlidir; bunlar iddia değil, yapılacak iş listesidir. **Bu belgede ölçülmemiş hiçbir sayı ölçülmüş gibi sunulmamıştır.** Özellikle pasta/passt'in pil ve gecikme maliyeti hakkında yayımlanmış bir ölçüm bulunamamıştır ve bu, uydurulmak yerine bir deney (E1) olarak tanımlanmıştır.
 
@@ -1058,17 +1056,15 @@ Küçük bir katılımcı grubuyla (en az 5 kişi), Gizlilik Merkezi kullanıld�
 
 > The Turkish text is normative in case of discrepancy.
 
-| Field | Value |
-|---|---|
-| **RFC** | 0005 |
-| **Title** | The OZERK Guard Network Model |
-| **Status** | Draft |
-| **Date** | 2026-08-17 |
-| **Author(s)** | OZERK founder |
-| **License** | CC BY-SA 4.0 |
-| **Open decision addressed** | [RFC-0001](0001-karar-kaydi.md) — A5 |
-| **Related manifesto chapters** | 5, 6.3, 6.9, 7, 9 (all), 10, 13, 23, 24 |
-| **Related RFCs** | [RFC-0002](0002-taban-dagitim.md), [RFC-0003](0003-paket-formati.md), [RFC-0004](0004-tarayici-motoru.md) |
+- **RFC:** 0005
+- **Title:** The OZERK Guard Network Model
+- **Status:** Draft
+- **Date:** 2026-08-17
+- **Author(s):** OZERK founder
+- **License:** CC BY-SA 4.0
+- **Open decision addressed:** [RFC-0001](0001-karar-kaydi.md) — A5
+- **Related manifesto chapters:** 5, 6.3, 6.9, 7, 9 (all), 10, 13, 23, 24
+- **Related RFCs:** [RFC-0002](0002-taban-dagitim.md), [RFC-0003](0003-paket-formati.md), [RFC-0004](0004-tarayici-motoru.md)
 
 > **Verification note.** The technical claims in this document were checked on 17 August 2026, wherever possible against **primary sources**: kernel documentation (`docs.kernel.org`), man pages, the kernel and nftables source trees, IETF RFC texts, project repositories and project FAQs. Blog posts are cited only where no primary source exists, and are marked as secondary. Every line that could not be verified is marked **"to be verified"**; those are not claims but a work list. **No unmeasured number is presented as measured in this document.** In particular, no published measurement of pasta/passt's battery and latency cost was found; rather than invent one, this is defined as an experiment (E1).
 

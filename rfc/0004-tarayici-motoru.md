@@ -2,17 +2,15 @@
 
 **Türkçe** | [English](#english)
 
-| Alan | Değer |
-|---|---|
-| **RFC** | 0004 |
-| **Başlık** | Web Uygulama Profili ve Tarayıcı Motoru |
-| **Durum** | Taslak |
-| **Tarih** | 2026-08-17 |
-| **Yazar(lar)** | OZERK kurucusu |
-| **Lisans** | CC BY-SA 4.0 |
-| **Karşıladığı açık karar** | [RFC-0001](0001-karar-kaydi.md) — A1 |
-| **İlgili manifesto bölümleri** | 1, 6.6, 6.7, 8.2 (C ve D), 10, 13, 18.1, 18.2, 24 |
-| **Bağlantılı RFC'ler** | RFC-0002 (taban dağıtım), RFC-0003 (paket formatı), RFC-0005 (Guard ağ modeli), RFC-0007 (bildirim ve suspend) |
+- **RFC:** 0004
+- **Başlık:** Web Uygulama Profili ve Tarayıcı Motoru
+- **Durum:** Taslak
+- **Tarih:** 2026-08-17
+- **Yazar(lar):** OZERK kurucusu
+- **Lisans:** CC BY-SA 4.0
+- **Karşıladığı açık karar:** [RFC-0001](0001-karar-kaydi.md) — A1
+- **İlgili manifesto bölümleri:** 1, 6.6, 6.7, 8.2 (C ve D), 10, 13, 18.1, 18.2, 24
+- **Bağlantılı RFC'ler:** RFC-0002 (taban dağıtım), RFC-0003 (paket formatı), RFC-0005 (Guard ağ modeli), RFC-0007 (bildirim ve suspend)
 
 > **Doğrulama notu.** Bu belgedeki dış kaynaklı teknik iddialar 17 Ağustos 2026 tarihinde kontrol edilmiştir. Tarayıcı motoru alanı hızlı değişir. Kanıt bulunamayan her satır **"doğrulanmalı"** olarak işaretlenmiştir; bunlar iddia değil, yapılacak iş listesidir. Karar verilmeden önce tüm "doğrulanmalı" satırlar kapatılmalıdır. Bu belgede ölçülmemiş hiçbir sayı ölçülmüş gibi sunulmamıştır; tahminler açıkça "tahmin" diye adlandırılmıştır.
 
@@ -624,17 +622,15 @@ Yine de bu alternatifin dürüst bir çekirdeği vardır: eğer Bölüm 9'daki e
 
 # RFC 0004: Web Application Profile and Browser Engine
 
-| Field | Value |
-|---|---|
-| **RFC** | 0004 |
-| **Title** | Web Application Profile and Browser Engine |
-| **Status** | Draft |
-| **Date** | 2026-08-17 |
-| **Author(s)** | OZERK founder |
-| **License** | CC BY-SA 4.0 |
-| **Open decision addressed** | [RFC-0001](0001-karar-kaydi.md) — A1 |
-| **Related manifesto sections** | 1, 6.6, 6.7, 8.2 (C and D), 10, 13, 18.1, 18.2, 24 |
-| **Related RFCs** | RFC-0002 (base distribution), RFC-0003 (package format), RFC-0005 (Guard network model), RFC-0007 (notification and suspend) |
+- **RFC:** 0004
+- **Title:** Web Application Profile and Browser Engine
+- **Status:** Draft
+- **Date:** 2026-08-17
+- **Author(s):** OZERK founder
+- **License:** CC BY-SA 4.0
+- **Open decision addressed:** [RFC-0001](0001-karar-kaydi.md) — A1
+- **Related manifesto sections:** 1, 6.6, 6.7, 8.2 (C and D), 10, 13, 18.1, 18.2, 24
+- **Related RFCs:** RFC-0002 (base distribution), RFC-0003 (package format), RFC-0005 (Guard network model), RFC-0007 (notification and suspend)
 
 > **Verification note.** The externally sourced technical claims in this document were checked on 17 August 2026. The browser engine field moves quickly. Every line for which no evidence was found is marked **"to be verified"**; those are not claims, they are a work list. All "to be verified" lines must be closed before the decision is made. No unmeasured number in this document is presented as measured; estimates are explicitly labelled as estimates.
 
